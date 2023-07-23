@@ -1,0 +1,17 @@
+body {
+	font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+}
+
+#icon {
+	width: 40px;
+	height: 40px;
+}
+
+.nav-link:hover {
+	text-decoration: underline;
+}
+/*
+https://www.flaticon.com/free-icons/add-to-cart
+https://www.flaticon.com/free-icons/smart-cart
+<a href="https://www.flaticon.com/free-icons/smart-cart" title="smart cart icons">Smart cart icons created by Freepik - Flaticon</a>
+*/

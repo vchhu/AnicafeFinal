@@ -40,9 +40,16 @@
 			<form id="bookingform" action="">
 				<h1>Book at Our Nearest Cafe</h1>
 				<div class="tab">
-					<h3>Location and Timing:</h3>
-					<p><input type="text" class="form-control" placeholder="First Name" name="fname"></p>
-					<p><input type="text" class="form-control" placeholder="Last Name" name="lname"></p>
+					<h3>Location</h3>
+					Select a Location:
+					<select id="selectloc" class="form-select mb-3">
+						<option>Wizard's Tower Cafe</option>
+						<option>Location 2</option>
+						<option>Location 3</option>
+						<option>Location 4</option>
+					</select>
+					<h3>Timing</h3>
+					Select Date and Time: <p><input class="form-control" type="datetime-local" id="ordertime" name="ordertime"/></p>
 				</div>
 				<div class="tab">
 					<input type="radio" class="form-check-input" id="formroom" name="optionrt" value="0" checked>
@@ -66,13 +73,6 @@
 							<option>Medium Room</option>
 							<option>Large Room</option>
 						</select>
-						Select a Theme:
-						<select class="form-select" id="theme" name="themelist">
-							<option>Pokemon</option>
-							<option>Adventure Time</option>
-							<option>One Piece</option>
-							<option>Naruto</option>
-						</select>
 					</div>
 					<div class="none" id="booktable">
 						<h3>Book Table</h3>
@@ -81,13 +81,16 @@
 						<label class="form-check-label" for="tablein">Inside</label>
 						<input type="radio" class="form-check-input" id="tableout" name="table" value="1">
 						<label class="form-check-label" for="tableout">Patio</label>
-						How many guests?
-						<div id="numseating" class="input-group mb-3">
-							<span class="input-group-text">1</span>
-							<input type="range" class="form-range" min="1" max="20"/>
-							<span class="input-group-text">20</span>
-						</div>
 					</div>
+					Select a Theme:
+					<select class="form-select" id="theme" name="themelist">
+						<option>Pokemon</option>
+						<option>Adventure Time</option>
+						<option>One Piece</option>
+						<option>Naruto</option>
+					</select>
+					How many guests? (1-20)
+					<input type="range" class="form-range" id="guests" min="1" max="20"/>
 				</div>
 				<div class="tab">
 					<h3>Contact Info:</h3>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Anicafe - Shopping Cart</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<link href="style.css" rel="stylesheet"/>
+		<script src="anicafe.js"></script>
+		<link href="bookingstyle.css" rel="stylesheet"/>
+	</head>
+	<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top p-1 mb-5">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="homepage.html" style="-webkit-text-stroke: .5px red"><h1>Anicafe</h1></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div id="collapseNav" class="collapse navbar-collapse">
+					<ul class="navbar-nav me-auto h5">
+						<li class="nav-item"><a id="navlink1" class="nav-link" href="contactus.html" style="-webkit-text-stroke: .5px orange">Contact Us</a></li>
+						<li class="nav-item"><a id="navlink2" class="nav-link" href="ourteam.html" style="-webkit-text-stroke: .5px yellow">Our Team</a></li>
+						<li class="nav-item"><a id="navlink3" class="nav-link" href="menu.html" style="-webkit-text-stroke: .5px lightgreen">View Menu</a></li>
+						<li class="nav-item"><a id="navlink4" class="nav-link" href="shop.html" style="-webkit-text-stroke: .5px lightgreen">Shop For Merch</a></li>
+						<li class="nav-item"><a id="navlink5" class="nav-link" href="booking.html" style="-webkit-text-stroke: .5px cyan">Book a Room or Table</a></li>
+						<li class="nav-item"><a id="navlink6" class="nav-link" href="learnmore.html" style="-webkit-text-stroke: .5px violet">Forums and Communities</a></li>
+					</ul>
+				</div>
+				<div class="btn-group ms-1 me-2">
+					<button type="button" class="btn btn-light" title="Only changes navigation bar" onclick="switchLang('en')">English</button>
+					<button type="button" class="btn btn-light" title="Only changes navigation bar" onclick="switchLang('fr')">French</button>
+				</div>
+				<a href="shoppingcartcheckout.html" style="-webkit-text-stroke: .5px lightgrey"><img id="icon" src="shopping-cart.png" class="rounded bg-light p-1" alt="Shopping Cart"/></a>
+			</div>
+		</nav>
+		
+		<div class="container-fluid pt-5">
+			<form id="bookingform" action="">
+				<h1>View Shopping Cart and Checkout</h1>
+				<div class="tab">
+					<h3>Shopping Cart</h3>
+					<table>
+					</table>
+				</div>
+				<div class="tab">
+					<h3>Delivery</h3>
+					<p><input class="form-control" placeholder="E-mail..." name="email"></p>
+					<p><input class="form-control" placeholder="Phone..." name="phone"></p>
+				</div>
+				<div class="tab">
+					<h3>Contact Info:</h3>
+					First Name: <p><input type="text" class="form-control" id="fname" placeholder="First Name" name="fname" required></p>
+					Last Name: <p><input type="text" class="form-control" id="lname" placeholder="Last Name" name="lname" required></p>
+					Email: <p><input type="email" class="form-control" id="email" placeholder="email@example.com" name="email" required></p>
+					Phone Number: <p><input type="phone" class="form-control" id="phone" placeholder="(777) 777-7777" name="phone" required></p>
+					Preferred Contact Method:
+					<select class="form-select">
+						<option>Email</option>
+						<option>Phonecall</option>
+						<option>Text</option>
+					</select>
+				</div>
+				<div class="tab">
+					<h3>Payment Info:</h3>
+					Payment Method:
+					<select class="form-select">
+						<option>Credit</option>
+						<option>Debit</option>
+					</select>
+					Cardholder: <p><input type="text" class="form-control" id="cardholder" placeholder="Full Name" name="cardholder" required></p>
+					Card Number: <p><input type="text" class="form-control" id="cardnum" placeholder="1234567890123456" name="cardnum" required></p>
+					<div class="row">
+						<div class="col">
+							CV:	<input type="text" class="form-control" id="cardcv" placeholder="000" name="cardcv" required>
+						</div>
+						<div class="col">
+							EXP: <input type="text" class="form-control" id="cardexp" placeholder="MM/YY" name="cardexp" required>
+						</div>
+					</div>
+				</div>
+				<div class="tab">
+					<h3>Booking Confirmed</h3>
+					<textarea class="form-control" rows="5" id="comment" name="text" required></textarea>
+				</div>
+				<div class="mt-4" style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="btn btn-dark text-light me-1" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+						<button type="button" class="btn btn-dark text-light me-1" id="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
+				</div>
+				<div class="mt-4" style="text-align:center;">
+					<span class="step"></span>
+					<span class="step"></span>
+					<span class="step"></span>
+					<span class="step"></span>
+					<span class="step"></span>
+				</div>
+			</form>
+			<script>
+				var currentTab = 0; // Current tab is set to be the first tab (0)
+				showTab(currentTab); // Display the current tab
+				
+				function showTab(n) {
+					var x = document.getElementsByClassName("tab");
+					x[n].style.display = "block";
+					if (n == 0) {
+						document.getElementById("prevBtn").style.display = "none";
+					} else {
+						document.getElementById("prevBtn").style.display = "inline";
+					}
+					if (n == (x.length - 2)) {
+						document.getElementById("nextBtn").classList.remove("btn-dark");
+						document.getElementById("nextBtn").classList.add("btn-primary");
+						document.getElementById("nextBtn").innerHTML = "Submit";
+					} else if (n == (x.length - 1)) {
+						document.getElementById("prevBtn").style.display = "none";
+						document.getElementById("nextBtn").style.display = "none";
+					} else {
+						document.getElementById("nextBtn").innerHTML = "Next";
+					}
+					fixStepIndicator(n);
+				}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+</script>
+		</div>
+	</body>
+</html>

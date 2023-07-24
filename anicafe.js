@@ -27,15 +27,12 @@ function switchLang(lang) {
 function showMenu(n) {
 	var x = document.getElementById("meals");
 	var y = document.getElementById("drinks");
-	var z = document.getElementByClass("drink");
 	if (n == 0) {
 		x.classList.replace("d-none", "d-block");
 		y.classList.replace("d-block", "d-none");
-		z.classList.replace("d-block", "d-none");
 	}
 	else if (n == 1) {
 		x.classList.replace("d-block", "d-none");
 		y.classList.replace("d-none", "d-block");
-		z.classList.replace("d-none", "d-block");
 	}
 }

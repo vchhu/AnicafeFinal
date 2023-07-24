@@ -62,9 +62,9 @@
 						<table class="table table-light table-hover table-bordered mb-3" width="100%">
 							<thead><tr><th>Size</th><th>Seating Range</th></tr></thead>
 							<tbody>
-								<tr><td>Small</td><td>s - S</td></tr>
-								<tr><td>Medium</td><td>m - M</td></tr>
-								<tr><td>Large</td><td>x - X</td></tr>
+								<tr><td>Small</td><td>1 - 5</td></tr>
+								<tr><td>Medium</td><td>6 - 11</td></tr>
+								<tr><td>Large</td><td>12 - 20</td></tr>
 							</tbody>
 						</table>
 						Select a Room:
@@ -90,7 +90,8 @@
 						<option>Naruto</option>
 					</select>
 					How many guests? (1-20)
-					<input type="range" class="form-range" id="guests" min="1" max="20"/>
+					<input type="range" class="form-range" id="guests" min="1" max="20" oninput="this.nextElementSibling.value = this.value"/>
+					<output>11</output> guests
 				</div>
 				<div class="tab">
 					<h3>Contact Info:</h3>

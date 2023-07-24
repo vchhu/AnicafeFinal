@@ -84,6 +84,13 @@
 				</div>
 				<div class="tab">
 					<h3>Delivery</h3>
+					Select a Location:
+					<select id="selectloc" class="form-select mb-3">
+						<option>Wizard's Tower Cafe</option>
+						<option>Location 2</option>
+						<option>Location 3</option>
+						<option>Location 4</option>
+					</select>
 					<h5>Menu Item Options</h5>
 					Date and Time of Order: <p><input class="form-control" type="datetime-local" id="ordertime" name="ordertime"/></p>
 					<input class="form-control-input" type="radio" id="mpickup" name="mordertype" value="0"/>
@@ -133,7 +140,7 @@
 				</div>
 				<div class="tab">
 					<h3>Booking Confirmed</h3>
-					<textarea class="form-control" rows="5" id="comment" name="text" required></textarea>
+					<div id="confirmdetail"></div>
 				</div>
 				<div class="mt-4" style="overflow:auto;">
 					<div style="float:right;">

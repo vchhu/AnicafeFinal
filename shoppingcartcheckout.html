@@ -37,16 +37,67 @@
 		
 		<div class="container-fluid pt-5">
 			<form id="bookingform" action="">
-				<h1>View Shopping Cart and Checkout</h1>
+				<h1>Shopping Cart and Checkout</h1>
 				<div class="tab">
 					<h3>Shopping Cart</h3>
-					<table>
+					<table class="mb-3" width="100%">
+						<thead>
+							<tr>
+								<th>Item Icon</th>
+								<th>Item Name</th>
+								<th>Quantity</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><img src="" alt="item1 icon"/></td>
+								<td>Item #1</td>
+								<td>1</td>
+								<td>$10.00</td>
+							</tr>
+							<tr>
+								<td><img src="" alt="item2 icon"/></td>
+								<td>Item #2</td>
+								<td>2</td>
+								<td>$15.00</td>
+							</tr>
+							<tr>
+								<td><img src="" alt="item3 icon"/></td>
+								<td>Item #3</td>
+								<td>1</td>
+								<td>$5.00</td>
+							</tr>
+						</tbody>
 					</table>
+					Remove Item from Shopping Cart:
+					<div class="input-group">
+						<select class="form-select">
+							<option>None</option>
+							<option>Item 1</option>
+							<option>Item 2</option>
+							<option>Item 3</option>
+						</select>
+						<button class="btn btn-warning d-flex ml-auto">Delete</button>
+					</div>
 				</div>
 				<div class="tab">
 					<h3>Delivery</h3>
-					<p><input class="form-control" placeholder="E-mail..." name="email"></p>
-					<p><input class="form-control" placeholder="Phone..." name="phone"></p>
+					<h5>Menu Item Options</h5>
+					Date and Time of Order: <p><input type="datetime-local" id="ordertime" name="ordertime"/></p>
+					<input type="radio" id="mpickup" name="mordertype" value="0"/>
+					<label for="mpickup">Pickup</label>
+					<input type="radio" id="mdelivery" name="mordertype" value="1"/>
+					<label for="mdelivery">Delivery</label>
+					<h5>Merchandise Item Options</h5>
+					<input type="radio" id="express" name="sordertype" value="0"/>
+					<label for="express">Express Delivery</label>
+					<input type="radio" id="regular" name="sordertype" value="1"/>
+					<label for="regular">Regular Delivery</label>
+					<input type="radio" id="slow" name="sordertype" value="2"/>
+					<label for="slow">Slow Delivery</label>
+					<input type="radio" id="pickup" name="sordertype" value="3"/>
+					<label for="pickup">Pickup</label>
 				</div>
 				<div class="tab">
 					<h3>Contact Info:</h3>

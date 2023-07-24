@@ -25,13 +25,10 @@ function showTab(n) {
 	} else {
 		document.getElementById("prevBtn").style.display = "inline";
 	}
-	if (n == (x.length - 2)) {
+	if (n == (x.length - 1)) {
 		document.getElementById("nextBtn").classList.remove("btn-dark");
 		document.getElementById("nextBtn").classList.add("btn-primary");
 		document.getElementById("nextBtn").innerHTML = "Submit";
-	} else if (n == (x.length - 1)) {
-		document.getElementById("prevBtn").style.display = "none";
-		document.getElementById("nextBtn").style.display = "none";
 	} else {
 		document.getElementById("nextBtn").innerHTML = "Next";
 	}
@@ -43,7 +40,13 @@ function nextPrev(n) {
 	if (n == 1 && !validateForm()) return false;
 	x[currentTab].style.display = "none";
 	currentTab = currentTab + n;
-	if (currentTab >= x.length) {
+	if (currentTab == (x.length-1)) {
+		var results = document.getElementById("confirmdetail");
+		results.innerHTML = "<p class='mt-3'>Name: " +document.getElementById("fname").value +" " +document.getElementById("lname").value +"<br/>";
+		results.innerHTML += "Location: " +document.getElementById("selectloc").value +"<br/>";
+		results.innerHTML += "Date and Time: " +document.getElementById("ordertime").value +"</p>";
+	}
+	else if (currentTab >= x.length) {
 		document.getElementById("bookingform").submit();
 		return false;
 	}

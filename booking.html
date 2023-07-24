@@ -52,11 +52,11 @@
 					Select Date and Time: <p><input class="form-control" type="datetime-local" id="ordertime" name="ordertime"/></p>
 				</div>
 				<div class="tab">
-					<input type="radio" class="form-check-input" id="formroom" name="optionrt" value="0" checked>
+					<input type="radio" class="form-check-input" id="formroom" name="optionrt" onclick="show(0)" checked>
 					<label class="form-check-label" for="tablein">Book a Room</label>
-					<input type="radio" class="form-check-input" id="formtable" name="optionrt" value="1">
+					<input type="radio" class="form-check-input" id="formtable" name="optionrt" onclick="show(1)" value="1">
 					<label class="form-check-label" for="tableout">Book a Table</label>
-					<div id="bookroom">
+					<div class="d-block" id="bookroom">
 						<h3>Book Room</h3>
 						<h5>Room Size Chart</h5>
 						<table class="table table-light table-hover table-bordered mb-3" width="100%">
@@ -74,7 +74,7 @@
 							<option>Large Room</option>
 						</select>
 					</div>
-					<div class="none" id="booktable">
+					<div class="d-none" id="booktable">
 						<h3>Book Table</h3>
 						Where do you want to sit? Inside or on the Patio?
 						<input type="radio" class="form-check-input" id="tablein" name="table" value="0" checked>

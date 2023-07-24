@@ -2,6 +2,19 @@ body {
 	font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
+input[type=image] {
+	width: 40px;
+	height: 40px;
+}
+
+#bookingform {
+  background-color: #f1f1f1;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
 #icon {
 	width: 40px;
 	height: 40px;
@@ -27,7 +40,7 @@ body {
 }
 
 .google-map {
-	padding-bottom: 40%;
+	padding-bottom: 35%;
 	position: relative;
 }
 

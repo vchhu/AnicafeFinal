@@ -54,7 +54,7 @@
 				<div class="tab">
 					<input type="radio" class="form-check-input" id="formroom" name="optionrt" onclick="show(0)" checked>
 					<label class="form-check-label" for="tablein">Book a Room</label>
-					<input type="radio" class="form-check-input" id="formtable" name="optionrt" onclick="show(1)" value="1">
+					<input type="radio" class="form-check-input" id="formtable" name="optionrt" onclick="show(1)">
 					<label class="form-check-label" for="tableout">Book a Table</label>
 					<div class="d-block" id="bookroom">
 						<h3>Book Room</h3>
@@ -63,7 +63,7 @@
 							<thead><tr><th>Size</th><th>Seating Range</th></tr></thead>
 							<tbody>
 								<tr><td>Small</td><td>1 - 5</td></tr>
-								<tr><td>Medium</td><td>6 - 11</td></tr>
+								<tr><td>Medium</td><td>6 - 12</td></tr>
 								<tr><td>Large</td><td>12 - 20</td></tr>
 							</tbody>
 						</table>
@@ -89,7 +89,7 @@
 						<option>One Piece</option>
 						<option>Naruto</option>
 					</select>
-					How many guests? (1-20)
+					How many guests?
 					<input type="range" class="form-range" id="guests" min="1" max="20" oninput="this.nextElementSibling.value = this.value"/>
 					<output>11</output> guests
 				</div>
@@ -126,7 +126,7 @@
 				</div>
 				<div class="tab">
 					<h3>Booking Confirmed</h3>
-					<textarea class="form-control" rows="5" id="comment" name="text" required></textarea>
+					<div id="confirmdetails"></div>
 				</div>
 				<div class="mt-4" style="overflow:auto;">
 					<div style="float:right;">

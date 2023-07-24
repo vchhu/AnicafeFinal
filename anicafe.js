@@ -23,3 +23,16 @@ function switchLang(lang) {
 		nav6.innerHTML = "Forums et Communautés";
 	}
 }
+
+function showMenu(n) {
+	var x = document.getElementById("meals");
+	var y = document.getElementById("drinks");
+	if (n == 0) {
+		x.classList.replace("d-none", "d-block");
+		y.classList.replace("d-block", "d-none");
+	}
+	else if (n == 1) {
+		x.classList.replace("d-block", "d-none");
+		y.classList.replace("d-none", "d-block");
+	}
+}

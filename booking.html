@@ -45,9 +45,49 @@
 					<p><input type="text" class="form-control" placeholder="Last Name" name="lname"></p>
 				</div>
 				<div class="tab">
-					<h3>Book Room/Table:</h3>
-					<p><input class="form-control" placeholder="E-mail..." name="email"></p>
-					<p><input class="form-control" placeholder="Phone..." name="phone"></p>
+					<input type="radio" class="form-check-input" id="formroom" name="optionrt" value="0" checked>
+					<label class="form-check-label" for="tablein">Book a Room</label>
+					<input type="radio" class="form-check-input" id="formtable" name="optionrt" value="1">
+					<label class="form-check-label" for="tableout">Book a Table</label>
+					<div id="bookroom">
+						<h3>Book Room</h3>
+						<h5>Room Size Chart</h5>
+						<table class="table table-hover table-bordered mb-3" width="100%">
+							<thead><tr><th>Size</th><th>Seating Range</th></tr></thead>
+							<tbody>
+								<tr><td>Small</td><td>s - S</td></tr>
+								<tr><td>Medium</td><td>m - M</td></tr>
+								<tr><td>Large</td><td>x - X</td></tr>
+							</tbody>
+						</table>
+						Select a Room:
+						<select class="form-select">
+							<option>Small Room</option>
+							<option>Medium Room</option>
+							<option>Large Room</option>
+						</select>
+						Select a Theme:
+						<select class="form-select" id="theme" name="themelist">
+							<option>Pokemon</option>
+							<option>Adventure Time</option>
+							<option>One Piece</option>
+							<option>Naruto</option>
+						</select>
+					</div>
+					<div class="none" id="booktable">
+						<h3>Book Table</h3>
+						Where do you want to sit? Inside or on the Patio?
+						<input type="radio" class="form-check-input" id="tablein" name="table" value="0" checked>
+						<label class="form-check-label" for="tablein">Inside</label>
+						<input type="radio" class="form-check-input" id="tableout" name="table" value="1">
+						<label class="form-check-label" for="tableout">Patio</label>
+						How many guests?
+						<div id="numseating" class="input-group mb-3">
+							<span class="input-group-text">1</span>
+							<input type="range" class="form-range" min="1" max="20"/>
+							<span class="input-group-text">20</span>
+						</div>
+					</div>
 				</div>
 				<div class="tab">
 					<h3>Contact Info:</h3>

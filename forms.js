@@ -1,7 +1,22 @@
 var currentTab = 0;
+
 function start() {
 	showTab(currentTab);
 }
+
+function show(n) {
+	var x = document.getElementById("bookroom");
+	var y = document.getElementById("booktable");
+	if (n == 0) {
+		x.classList.replace("d-none", "d-block");
+		y.classList.replace("d-block", "d-none");
+	}
+	else if (n == 1) {
+		x.classList.replace("d-block", "d-none");
+		y.classList.replace("d-none", "d-block");
+	}
+}
+
 function showTab(n) {
 	var x = document.getElementsByClassName("tab");
 	x[n].style.display = "block";
